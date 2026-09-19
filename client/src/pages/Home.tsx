@@ -30,17 +30,24 @@ export default function Home() {
         },
         "-=0.8",
       )
-      .from("#p", {
-        delay: 0.5,
-        opacity: 0,
-        duration: 0.4,
-      });
+      .fromTo(
+        "#p",
+        {
+          opacity: 0,
+        },
+        {
+          delay: 0.2,
+          opacity: 1,
+          duration: 0.4,
+        },
+      );
     tl.fromTo(
       "#cta-btn",
       {
         opacity: 0,
       },
       {
+        delay: 0.2,
         opacity: 1,
         duration: 0.4,
       },
@@ -91,7 +98,12 @@ export default function Home() {
             Start Your Journey
           </button>
         </section>
-        <section className="bg-[#d3d3d3] h-80"></section>
+        <section className="bg-[#d3d3d3] h-80 flex flex-col items-center justify-center">
+          <h1 className="font-[Inter] font-bold text-[black] uppercase">
+            The body achieves what the mind believes.
+            <div className="flex flex-row items-center justify-center"></div>
+          </h1>
+        </section>
         <section className="bg-black h-800"></section>
       </main>
     </>
