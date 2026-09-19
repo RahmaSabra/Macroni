@@ -9,27 +9,42 @@ export default function Home() {
 
     tl.from("#train", {
       clipPath: "inset(0 100% 0 0)",
-      duration: 1,
+      duration: 1.2,
       ease: "none",
     })
       .from(
         "#track",
         {
           clipPath: "inset(0 100% 0 0)",
-          duration: 1,
+          duration: 1.2,
           ease: "none",
         },
-        "-=0.5",
+        "-=0.8",
       )
       .from(
         "#transform",
         {
           clipPath: "inset(0 100% 0 0)",
-          duration: 1,
+          duration: 1.2,
           ease: "none",
         },
-        "-=0.5",
-      );
+        "-=0.8",
+      )
+      .from("#p", {
+        delay: 0.5,
+        opacity: 0,
+        duration: 0.4,
+      });
+    tl.fromTo(
+      "#cta-btn",
+      {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        duration: 0.4,
+      },
+    );
   });
   return (
     <>
@@ -60,13 +75,19 @@ export default function Home() {
             transform.
           </h1>
 
-          <p className="ml-8 pr-8 text-[8px] font-[Inter] font-extralight max-w-xs mt-2.5 md:ml-24 md:pr-0 ">
+          <p
+            id="p"
+            className="ml-8 pr-8 text-[8px] font-[Inter] font-extralight max-w-xs mt-2.5 md:ml-24 md:pr-0 "
+          >
             Take control of your nutrition with Macroni. Easily log your meals,
             track calories and macros, monitor your progress, and stay on top of
             your goals without letting numbers get in the way.
           </p>
 
-          <button className="cursor-pointer mt-4 ml-8 px-6 py-3 bg-transparent border-2 border-[#ffe900] text-[#ffe900] text-xs font-[Inter] uppercase rounded-full  shadow-[0_0_15px_rgba(34,211,238,0.5)] transition-all duration-200 hover:bg-[#ffe900] hover:text-black md:ml-24">
+          <button
+            id="cta-btn"
+            className="cursor-pointer mt-4 ml-8 px-6 py-3 bg-transparent border-2 border-[#ffe900] text-[#ffe900] text-xs font-[Inter] uppercase rounded-full  shadow-[0_0_15px_rgba(34,211,238,0.5)] duration-200 hover:bg-[#ffe900] hover:text-black md:ml-24"
+          >
             Start Your Journey
           </button>
         </section>
